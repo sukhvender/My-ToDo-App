@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <link rel="stylesheet" href="css/home.css">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  </head>
+
+  <body>
+    <h1 class="heading">TODO APP</h1>
+
+    <form  method="POST">
+
+      <div class="grid-container">
+      <div class="infos g1">
+      <label for="description">DESCRIPTION</label>
+      <input type="text" name="description" id="description" placeholder="What do you need too do ?" required>
+      </div>
+      
+  
+      <div class="infos g2">
+      <label for="category">CATEGORY</label>
+      <select name="category" id="category">
+        <option value="">Choose a category</option>
+        <option value="HOME">HOME</option>
+        <option value="SCHOOL">SCHOOL</option>
+        <option value="WORK">WORK</option>
+        <option value="WORKOUT">WORKOUT</option>
+      </select>
+      </div>
+
+      <div class="infos g3">
+      <label for="date">DUE DATE</label>
+      <input type="date" name = "date" id="date" required>
+      </div>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="add" formaction="/add-task">
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          Add Task
+        </button>
+      </form>
+
+    <form action="/remove-task" method="POST">
+        <button type="submit" class="delete">
+          <i class="far fa-trash-alt"></i>
+          Delete Task
+        </button>
+        
+      </div>
+
+    <div class="list">
+      <ul>
+        <% for( let i of task_list){ %> 
+            <li class="task-list">
+                <input type="checkbox" name="checkbox" id="checkbox" value="<%= i._id %>">
+              <div>
+                <%= i.description %><br>
+                <i class="fas fa-calendar-alt"></i>
+                <%=i.date%>
+              </div>
+              
+              <%if(i.category=="WORK"){%>
+                <div class="cat-box work"> <i class="fas fa-briefcase"></i> <%= i.category %></div>
+                <%}%>
+                
+                <%if(i.category=="SCHOOL"){ %>
+                  <div class="cat-box school"> <i class="fas fa-school"></i> <%= i.category %></div>
+                  <%}%>
+                
+                  <%if(i.category=="WORKOUT"){ %>
+                    <div class="cat-box workout"> <i class="fas fa-dumbbell"></i> <%= i.category %></div>
+                    <%}%>
+
+                    <%if(i.category=="HOME"){ %>
+                      <div class="cat-box home"> <i class="fas fa-home"></i><%= i.category %></div>
+                      <%}%>
+
+                      <%if(i.category==""){ %>
+                        <div class="cat-box"> <%= i.category %></div>
+                        <%}%>              
+            </li>
+          <%} %>
+      </ul>
+    </div>
+
+    </form>
+
+  </body>
+</html>

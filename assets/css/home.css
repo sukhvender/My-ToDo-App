@@ -1,0 +1,109 @@
+body{
+  margin-left: 20%;
+  margin-right: 20%;
+  background: url('../images/bg.jpeg');
+}
+.heading{
+  font-size: 3rem;
+  text-align: center;
+  color: black;
+}
+
+.infos{
+  border: 1.5px solid lightgray;
+  padding: 20px;
+}
+
+.infos input ,select{
+  background: inherit;        
+}
+
+label{
+  display: block;
+  padding-bottom: 5px;
+}
+
+.list{
+  color: rgb(100, 100, 100);
+}
+
+
+input,select{
+  border: none;
+  outline: none;
+}
+#description{
+  width: 100%;
+}
+.grid-container{
+  display: grid;
+  grid-template-columns: auto auto;
+
+}
+
+.g1 {
+  grid-column: 1 / span 2;
+}
+option:first{
+  color: #999;
+}
+.buttons{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 30px;
+  grid-gap: 10px;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+i{
+  padding: 5px;
+}
+.add{
+  color: white;
+  background-color: rgb(43, 41, 41);
+  padding: 10px;
+  font-size: 1rem;
+  width: 140px;
+  height: 50px;
+}
+.delete{
+  color: white;
+  background-color: red;
+  padding: 10px;
+  font-size: 1rem;
+  width: 140px;
+  height: 50px;
+}
+
+.task-list{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  font-size: 1.5rem;
+  border-top: 1.2px solid lightgray;
+  padding: 20px;
+}
+
+#checkbox{
+  width: 20px;
+  height: 20px;
+}
+
+.cat-box{
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  color: white;
+}
+
+.work{
+  background-color: blueviolet;
+}
+.school{
+  background-color: aqua;
+}
+.home{
+  background-color: crimson;
+}
+.workout{
+  background-color: lawngreen;
+}
